@@ -202,6 +202,13 @@ public final class TSDB {
     return new TsdbQuery(this);
   }
 
+  public Query newQuery(final boolean strict) {
+    if (strict)
+      return new StrictTsdbQuery(this);
+    else
+      return new TsdbQuery(this);
+  }
+
   /**
    * Returns a new {@link WritableDataPoints} instance suitable for this TSDB.
    * <p>

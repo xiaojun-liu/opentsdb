@@ -850,7 +850,7 @@ final class GraphHandler implements HttpRpc {
       if (rate) {
         i--;  // Move to the next part.
       }
-      final Query tsdbquery = tsdb.newQuery();
+      final Query tsdbquery = tsdb.newQuery(query.hasQueryStringParam("strict"));
       try {
         tsdbquery.setTimeSeries(metric, parsedtags, agg, rate);
       } catch (NoSuchUniqueName e) {
