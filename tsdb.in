@@ -58,6 +58,9 @@ case $1 in
   (import)
     MAINCLASS=TextImporter
     ;;
+  (ci)
+    MAINCLASS=ContinuousImporter
+    ;;
   (mkmetric)
     shift
     set uid assign metrics "$@"
